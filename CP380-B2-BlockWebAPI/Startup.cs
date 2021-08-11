@@ -31,6 +31,12 @@ namespace CP380_B2_BlockWebAPI
             // TODO:
             //  add singletons
             //  
+
+            services.AddSingleton<BlockSummaryList>();
+            services.AddSingleton<BlockList>();
+            services.AddSingleton<PendingPayloadsList>();
+
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
