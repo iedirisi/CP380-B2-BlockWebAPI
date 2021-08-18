@@ -12,6 +12,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.IO;
+using CP380_B1_BlockWebAPI.Models;
+using CP380_B2_BlockWebAPI.Models;
 
 namespace CP380_B2_BlockWebAPI
 {
