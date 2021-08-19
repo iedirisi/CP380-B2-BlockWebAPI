@@ -8,18 +8,17 @@ namespace CP380_B1_BlockList.Models
 
     public class Payload
     {
-        public string user { get; set;}
-        public TransactionTypes tType { get; set;}
-        public int amount { get; set; }
-        public string item { get;set; }
+        public string User { get; set; }
+        public TransactionTypes TransactionType { get; set; }
+        public int Amount { get; set; }
+        public string Item { get; set; }
+       public Payload(string user, TransactionTypes transactionType, int amount, string item)
+        {
+            User=user;
+            TransactionType = transactionType;
+            Amount= amount;
+            Item=item;
 
-        public Payload(string uname, TransactionTypes transacTy, int amt, string item)
-        { 
-            this.user=uname;
-            this.tType=transacTy;
-            this.amount=amt;
-            this.item=item;
-        
         }
     }
 }

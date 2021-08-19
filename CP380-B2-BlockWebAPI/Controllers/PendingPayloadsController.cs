@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,22 +14,25 @@ namespace CP380_B2_BlockWebAPI.Controllers
     [Produces("application/json")]
     public class PendingPayloadsController : ControllerBase
     {
-        private readonly PendingPayloadsList _pendingPayloads;
+        private readonly PendingPayloadsList PL;
 
-        public PendingPayloadsController(PendingPayloadsList LiPayloads)
+        public PendingPayloadsController(PendingPayloadsList payloads)
         {
-            _pendingPayloads = LiPayloads;
+            PL = payloads;
         }
 
-        [HttpGet]
-        public ActionResult<List<Payload>> Get() =>
-            _pendingPayloads.payloads.ToList();
-
-        [HttpPost]
-        public ActionResult<Payload> Post(Payload pLoad)
+        [HttpGet]                                  
+        public ActionResult<List<Payload>> Get()
         {
-            _pendingPayloads.payloads.Add(pLoad);
-            return pLoad;
+            var item = PL.payloads;
+            var payld=item.ToList();
+            return (payld);
+        }
+        [HttpPost]                              
+        public ActionResult<Payload> Post(Payload data)
+        {
+            PL.payloads.Add(data);
+            return data;
         }
     }
 }
